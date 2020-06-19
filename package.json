@@ -1,0 +1,12 @@
+{
+  "name": "greenerichproduce.com",
+  "version": "1.0.0",
+  "description": "Website - greenerichproduce",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CloseBRF/greenerichproduce"
+  },
+  "author": "Matheus F. Frederico <maathe.f@gmail.com>",
+  "license": "ISC"
+}

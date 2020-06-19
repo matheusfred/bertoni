@@ -1,0 +1,54 @@
+/* DEFAULT CONFIG CSS */
+
+html{
+	overflow:initial;
+}
+
+body{ 
+	background-color: #daf0cca6 !important;
+}
+
+h1{color: rgb(0, 0, 0, 0.7) !important;}
+h5{font-size: 15px !important; text-transform: uppercase;color: black !important;}
+
+p{margin: 5px !important;}
+ul{list-style: none;padding: 0px;}
+
+.vcenter {display: flex;align-items: center;flex-wrap: wrap;height: 250.500px}
+.nopadding{padding-right: 0px !important;padding-left: 0px !important;}
+
+/* MENU CONFIG CSS */
+
+.selected{ border-bottom: 3px solid rgb(5, 73, 16);}
+
+.menu-item{
+	float: left;
+	padding: 5px;
+	margin-bottom: 5px;
+	cursor: pointer;
+	color: white;
+}
+
+.navbar{
+	box-shadow: 0 6px 12px 0 rgba(0,0,0,.1)
+}
+
+/* PAG CONFIG CSS */
+
+.pagebox{
+	height: 350px;
+	color:#A3A3A3;
+	padding: 20px;
+}
+
+/* TRANSITION */
+
+.transition.ng-enter {
+  transition: 0.7s linear all;
+  opacity:0;
+}
+
+.transition.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
