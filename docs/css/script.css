@@ -1,25 +1,22 @@
 /* DEFAULT CONFIG CSS */
-
-html{
-	overflow:initial;
-}
-
 body{ 
-	background-color: #daf0cca6 !important;
+	background-color: white !important;
 }
 
 h1{color: rgb(0, 0, 0, 0.7) !important;}
-h5{font-size: 15px !important; text-transform: uppercase;color: black !important;}
+h5{font-size: 15px !important; text-transform: uppercase; margin: 5px !important;}
 
 p{margin: 5px !important;}
 ul{list-style: none;padding: 0px;}
 
 .vcenter {display: flex;align-items: center;flex-wrap: wrap;height: 250.500px}
 .nopadding{padding-right: 0px !important;padding-left: 0px !important;}
+.btn-mobile{visibility: hidden;display: none;}
 
 /* MENU CONFIG CSS */
 
-.selected{ border-bottom: 3px solid rgb(5, 73, 16);}
+.selected{ border-bottom: 3px solid rgba(37, 255, 72, 0.58);}
+.selection{ background-color: rgba(37, 255, 72, 0.58);}
 
 .menu-item{
 	float: left;
@@ -30,6 +27,7 @@ ul{list-style: none;padding: 0px;}
 }
 
 .navbar{
+	background-color: #009247;
 	box-shadow: 0 6px 12px 0 rgba(0,0,0,.1)
 }
 
@@ -51,4 +49,24 @@ ul{list-style: none;padding: 0px;}
 .transition.ng-enter.ng-enter-active {
   opacity:1;
 }
+
+/****** TABLET ******/
+@media only screen and (max-width: 1024px) {
+	.selected{ 
+		border-bottom: 0px solid rgba(37, 255, 72, 0.58);
+		background-color: rgba(37, 255, 72, 0.58);
+	}
+
+	.hidden-mobile{display: none !important;}
+	.btn-mobile{visibility: visible;display: initial;}
+}	
+
+@media only screen and (max-width: 768px) {
+
+}	 
+
+/****** MOBILE ******/
+@media only screen and (max-width: 450px) {
+
+}	
 

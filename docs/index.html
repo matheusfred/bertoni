@@ -11,52 +11,72 @@
 	</head>
 
 	<body ng-controller="indexCtrl">
-				<!-- NAVBAR -->
-				<div class="container">
-					<div class="row">
-						<nav class="navbar container-fluid ">
-							<!-- <img class="logo mx-auto d-block" src="img/logo.png" alt="logomarca"> -->
-							<ul class="col-md-12 mt-2">
-								<li class="col-md-1 text-center menu-item" ui-sref="home"  
-									ng-click="changeStatus('home');">
-									<h5 ng-class="{selected: statusmenu === 'home'}">HOME</h5>
-								</li>									
-								<li class="col-md-2 text-center menu-item" ui-sref="tropicaloil"  
-									ng-click="changeStatus('tropicaloil');">
-									<h5 ng-class="{selected: statusmenu === 'tropicaloil'}">Tropical Oil</h5>
-								</li>									
-								<li class="col-md-1 text-center menu-item" ui-sref="fruits"  
-									ng-click="changeStatus('fruits');">
-									<h5 ng-class="{selected: statusmenu === 'fruits'}">Fruits</h5>
-								</li>
-								<li class="col-md-1 text-center menu-item" ui-sref="blog" 
-									ng-click="changeStatus('blog');callCarouselHome();">
-									<h5 ng-class="{selected: statusmenu === 'blog'}">Blog</h5>
-								</li>									
-								<li class="col-md-1 text-center menu-item" ui-sref="services" 
-									ng-click="changeStatus('services');">
-									<h5 ng-class="{selected: statusmenu === 'services'}">Services</h5>
-								</li>
-								<li class="col-md-2 text-center menu-item" ui-sref="sustainability"  
-									ng-click="changeStatus('sustainability');">
-									<h5 ng-class="{selected: statusmenu === 'sustainability'}">Sustainability</h5>
-								</li>									
-								<li class="col-md-1 text-center menu-item" ui-sref="news" 
-									ng-click="changeStatus('news');callCarouselHome();">
-									<h5 ng-class="{selected: statusmenu === 'news'}">News</h5>
-								</li>
-								<li class="col-md-2 text-center menu-item" ui-sref="gallery" 
-									ng-click="changeStatus('gallery');callCarouselHome();">
-									<h5 ng-class="{selected: statusmenu === 'gallery'}">Media Gallery</h5>
-								</li>
-								<li class="col-md-1 text-center menu-item" ui-sref="contact" 
-									ng-click="changeStatus('contact');callCarouselHome();">
-									<h5 ng-class="{selected: statusmenu === 'contact'}">Contact</h5>
-								</li>																											
-							</ul>
-						</nav>	
-					</div>
-				
+		<!-- NAVBAR -->
+		<div class="row">
+			<nav class="navbar container-fluid">
+				<!-- <img class="logo mx-auto d-block" src="img/logo.png" alt="logo"> -->
+				<ul class="col-12 mt-1 mb-1" ng-class="{'collapse mt-0': isMobile}" id="toggle-BtnMobile">
+					<li class="col-lg-1 col-md-12 offset-lg-1 text-center menu-item" ui-sref="home"  
+						ng-click="changeStatus('home');"
+						ng-class="{selected: statusmenu === 'home'}">
+						<h5>HOME</h5>
+					</li>									
+					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="tropicaloil"  
+						ng-click="changeStatus('tropicaloil');"
+						ng-class="{selected: statusmenu === 'tropicaloil'}">
+						<h5>Tropical Oil</h5>
+					</li>									
+					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="fruits"  
+						ng-click="changeStatus('fruits');"
+						ng-class="{selected: statusmenu === 'fruits'}">
+						<h5>Fruits</h5>
+					</li>
+					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="blog" 
+						ng-click="changeStatus('blog');callCarouselHome();"
+						ng-class="{selected: statusmenu === 'blog'}">
+						<h5>Blog</h5>
+					</li>									
+					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="services" 
+						ng-click="changeStatus('services');"
+						ng-class="{selected: statusmenu === 'services'}">
+						<h5>Services</h5>
+					</li>
+					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="sustainability"  
+						ng-click="changeStatus('sustainability');"
+						ng-class="{selected: statusmenu === 'sustainability'}">
+						<h5>Sustainability</h5>
+					</li>									
+					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="news" 
+						ng-click="changeStatus('news');callCarouselHome();"
+						ng-class="{selected: statusmenu === 'news'}">
+						<h5>News</h5>
+					</li>
+					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="gallery" 
+						ng-click="changeStatus('gallery');callCarouselHome();"
+						ng-class="{selected: statusmenu === 'gallery'}">
+						<h5>Media Gallery</h5>
+					</li>
+					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="contact" 
+						ng-click="changeStatus('contact');callCarouselHome();"
+						ng-class="{selected: statusmenu === 'contact'}">
+						<h5>Contact</h5>
+					</li>																											
+				</ul>
+
+				<div class="col-sm-12 btn-mobile navbar-dark">
+					<button class="navbar-toggler float-right" type="button" 
+						data-toggle="collapse" 
+						data-target="#toggle-BtnMobile"
+						aria-controls="toggle-BtnMobile" 
+						aria-expanded="false" 
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>				
+			</nav>			   	
+		</div>
+		
+				<div class="container">	
 					<!-- VIEW'S -->
 					<div class="transition" ui-view></div>	
 				</div>

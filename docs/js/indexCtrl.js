@@ -10,6 +10,7 @@ moduleApp.controller('indexCtrl', function($scope, cfpLoadingBar){
 	cfpLoadingBar.start();
 
 	$scope.statusmenu = 'home';	
+	$scope.isMobile = false;
 
 	$scope.changeStatus = function(newValue){
 		cfpLoadingBar.start();
@@ -18,4 +19,12 @@ moduleApp.controller('indexCtrl', function($scope, cfpLoadingBar){
 		
 		cfpLoadingBar.complete(); 
 	};
+
+	$scope.detectMob = function() {	
+		if (window.innerWidth <= 1024){
+			$scope.isMobile = true;
+		}
+	};
+
+	$scope.detectMob();
 });  
