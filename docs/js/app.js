@@ -7,10 +7,8 @@
 /*
 /* ****************************************************** */
 var moduleApp = angular.module('moduleApp', ['ngAnimate', 'ui.router', 'angular-loading-bar'])
-.config(['cfpLoadingBarProvider', 
-    function(cfpLoadingBarProvider) {
-     cfpLoadingBarProvider.includeSpinner  = false;
-    }
+.config([
+    'cfpLoadingBarProvider', function(cfpLoadingBarProvider) {cfpLoadingBarProvider.includeSpinner  = false;}
 ]);
 
 moduleApp.run(["$state",function($state){$state.go('home');}]);

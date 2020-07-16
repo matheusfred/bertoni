@@ -1,6 +1,8 @@
 /* DEFAULT CONFIG CSS */
+html,body{height: 100% !important;}
+
 body{ 
-	background-color: white !important;
+	background-color: black !important;
 }
 
 h1{color: rgb(0, 0, 0, 0.7) !important;}
@@ -27,7 +29,7 @@ ul{list-style: none;padding: 0px;}
 }
 
 .navbar{
-	background-color: #009247;
+	background-color: #536292;
 	box-shadow: 0 6px 12px 0 rgba(0,0,0,.1)
 }
 

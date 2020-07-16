@@ -9,43 +9,36 @@
 /* ****************************************************** */
 moduleApp.config(function($stateProvider) {
   $stateProvider
+    // HUB PAGE ROUTE
     .state('home', {
-      url: "",
-      templateUrl: 'pags/aboutus.html'
+      url: '/home',
+      templateUrl: 'pags/home.html'
     }) 
-    .state('fruits', {
-      url: "/fruits",
-      templateUrl: 'pags/fruits.html'
-    })  
-    .state('tropicaloil', {
-      url: "/tropicaloil",
-      templateUrl: 'pags/tropicaloil.html'
-    })       
-    .state('blog', {
-      url: "/blog",
-      templateUrl: 'pags/blog.html'
-    })     
-    .state('services', {
-      url: "/services",
-      templateUrl: 'pags/services.html'
-    }) 
-    .state('sustainability', {
-      url: "/sustainability",
-      templateUrl: 'pags/sustainability.html'
-    })     
-    .state('news', {
-      url: "/news",
-      templateUrl: 'pags/news.html'
+
+    // STORE PAGE ROUTE
+    .state('store', {
+      url: '/store',
+      templateUrl: 'pags/store.html'
     })
-    .state('gallery', {
-      url: "/gallery",
-      templateUrl: 'pags/gallery.html'
-    })  
-    .state('contact', {
-      url: "/contact",
-      templateUrl: 'pags/contact.html'
-    })        
-    
+    .state('store.contact', {
+      url: '/contact',
+      templateUrl: 'pags/subpage/contact.html'
+    })
+    // .state('store.item.detail', {
+    //   url: '/detail/:id',
+    //   templateUrl: item-detail.html'
+    // });     
+
+    // CUSTOM PROJECTS ROUTE
+    .state('custom', {
+      url: '/custom',
+      templateUrl: 'pags/custom.html'
+    })
+    .state('custom.contact', {
+      url: '/contact',
+      templateUrl: 'pags/subpage/contact.html'
+    })    
+        
     // .state('sucess', {
     //   url: "/sucess",
     //   templateUrl: 'pags/sucess.html'

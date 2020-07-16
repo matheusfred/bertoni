@@ -1,0 +1,40 @@
+<div class="col-12">
+	<!-- NAVBAR -->
+	<div class="row">
+		<nav class="navbar container-fluid">
+			<!-- <img class="logo mx-auto d-block" src="img/logo.png" alt="logo"> -->
+			<ul class="col-12 mt-1 mb-1" ng-class="{'collapse mt-0': isMobile}" id="toggle-BtnMobile">
+				<li class="col-lg-2 col-md-12 offset-lg-6 text-center menu-item" ui-sref="home"  
+					ng-click="changeStatus('home');"
+					ng-class="{selected: statusmenu === 'home'}">
+					<h5>HOME</h5>
+				</li>	
+				<li class="col-lg-2 col-md-12 text-center menu-item" ui-sref="custom.contact" 
+					ng-click="changeStatus('contact');"
+					ng-class="{selected: statusmenu === 'contact'}">
+					<h5>Contact</h5>
+				</li>																						
+				<li class="col-lg-2 col-md-12 text-center menu-item" ui-sref="store" 
+					ng-click="changeStatus('home');">
+					<h5>Store</h5>
+				</li>																																									
+			</ul>
+
+			<div class="col-sm-12 btn-mobile navbar-dark">
+				<button class="navbar-toggler float-right" type="button" 
+					data-toggle="collapse" 
+					data-target="#toggle-BtnMobile"
+					aria-controls="toggle-BtnMobile" 
+					aria-expanded="false" 
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>				
+		</nav>			   	
+	</div>
+	
+	<div class="container">	
+		<!-- VIEW'S -->
+		<div class="transition" ui-view></div>	
+	</div>
+</div>

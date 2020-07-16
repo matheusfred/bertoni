@@ -1,97 +1,30 @@
 <!DOCTYPE html>
 <html ng-app="moduleApp">
 	<head>
-		<title>Green & Rich produce (temporally)</title>
+		<title>Bertoni</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-
+	
 		<link type="text/css" rel="stylesheet" href="css/script.css" />
+		<link type="text/css" rel="stylesheet" href="css/script-hub.css" />
 		<link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
 		<link type="text/css" rel="stylesheet" href="lib/angular-loadingbar/loading-bar.min.css" />
 	</head>
 
 	<body ng-controller="indexCtrl">
-		<!-- NAVBAR -->
-		<div class="row">
-			<nav class="navbar container-fluid">
-				<!-- <img class="logo mx-auto d-block" src="img/logo.png" alt="logo"> -->
-				<ul class="col-12 mt-1 mb-1" ng-class="{'collapse mt-0': isMobile}" id="toggle-BtnMobile">
-					<li class="col-lg-1 col-md-12 offset-lg-1 text-center menu-item" ui-sref="home"  
-						ng-click="changeStatus('home');"
-						ng-class="{selected: statusmenu === 'home'}">
-						<h5>HOME</h5>
-					</li>									
-					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="tropicaloil"  
-						ng-click="changeStatus('tropicaloil');"
-						ng-class="{selected: statusmenu === 'tropicaloil'}">
-						<h5>Tropical Oil</h5>
-					</li>									
-					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="fruits"  
-						ng-click="changeStatus('fruits');"
-						ng-class="{selected: statusmenu === 'fruits'}">
-						<h5>Fruits</h5>
-					</li>
-					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="blog" 
-						ng-click="changeStatus('blog');callCarouselHome();"
-						ng-class="{selected: statusmenu === 'blog'}">
-						<h5>Blog</h5>
-					</li>									
-					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="services" 
-						ng-click="changeStatus('services');"
-						ng-class="{selected: statusmenu === 'services'}">
-						<h5>Services</h5>
-					</li>
-					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="sustainability"  
-						ng-click="changeStatus('sustainability');"
-						ng-class="{selected: statusmenu === 'sustainability'}">
-						<h5>Sustainability</h5>
-					</li>									
-					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="news" 
-						ng-click="changeStatus('news');callCarouselHome();"
-						ng-class="{selected: statusmenu === 'news'}">
-						<h5>News</h5>
-					</li>
-					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="gallery" 
-						ng-click="changeStatus('gallery');callCarouselHome();"
-						ng-class="{selected: statusmenu === 'gallery'}">
-						<h5>Media Gallery</h5>
-					</li>
-					<li class="col-lg-1 col-md-12 text-center menu-item" ui-sref="contact" 
-						ng-click="changeStatus('contact');callCarouselHome();"
-						ng-class="{selected: statusmenu === 'contact'}">
-						<h5>Contact</h5>
-					</li>																											
-				</ul>
+		<!-- VIEW -->
+		<div class="transition" ui-view></div>	
 
-				<div class="col-sm-12 btn-mobile navbar-dark">
-					<button class="navbar-toggler float-right" type="button" 
-						data-toggle="collapse" 
-						data-target="#toggle-BtnMobile"
-						aria-controls="toggle-BtnMobile" 
-						aria-expanded="false" 
-						aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-				</div>				
-			</nav>			   	
-		</div>
-		
-				<div class="container">	
-					<!-- VIEW'S -->
-					<div class="transition" ui-view></div>	
-				</div>
+		<!-- SCRIPT LIBS -->
+		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>	
+		<script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
+		<script type="text/javascript" src="lib/angular-loadingbar/loading-bar.min.js"></script>
+		<script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-				<!-- SCRIPT LIBS -->
-				<script type="text/javascript" src="lib/angular/angular.min.js"></script>
-				<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
-				<script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>	
-				<script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
-				<script type="text/javascript" src="lib/angular-loadingbar/loading-bar.min.js"></script>
-    		    <script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-
-				<!-- ANGULAR CONTROLLERS -->
-				<script src="js/app.js"></script>
-				<script src="js/routes.js"></script>
-				<script src="js/indexCtrl.js"></script>  
+		<!-- ANGULAR CONTROLLERS -->
+		<script src="js/app.js"></script>
+		<script src="js/routes.js"></script>
+		<script src="js/indexCtrl.js"></script>  
 	</body>
 </html>

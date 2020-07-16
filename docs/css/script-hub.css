@@ -1,0 +1,13 @@
+.hub-menu{
+    height: 653px;
+    cursor: pointer;
+    overflow:auto;
+	background-color: #536292;
+} .hub-menu:hover{
+	opacity: 0.8;
+}
+
+.menu-store{
+    height: 583px;
+    background-color: #536292;
+}
