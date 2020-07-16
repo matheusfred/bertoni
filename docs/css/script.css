@@ -17,8 +17,8 @@ ul{list-style: none;padding: 0px;}
 
 /* MENU CONFIG CSS */
 
-.selected{ border-bottom: 3px solid rgba(37, 255, 72, 0.58);}
-.selection{ background-color: rgba(37, 255, 72, 0.58);}
+.selected{ border-bottom: 3px solid #7e93da;}
+.selection{ background-color: #7e93da;}
 
 .menu-item{
 	float: left;
