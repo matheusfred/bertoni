@@ -1,0 +1,32 @@
+<form class="col-md-8 pt-3 nopadding">
+    <div class="col-md-12 nopadding">
+        <label for="staticName" class="sr-only">Nome</label>
+        <input type="text" class="form-control mb-3" id="name" placeholder="Nome" ng-model="value.name">
+
+        <label for="staticDesc" class="sr-only">Descrição</label>
+        <input type="text" class="form-control mb-3" id="desc" placeholder="Descrição" ng-model="value.desc">
+
+        <label for="staticNameEn" class="sr-only">Nome em Inglês</label>
+        <input type="text" class="form-control mb-3" id="nameen" placeholder="Name" ng-model="value.nameen">
+
+        <label for="staticDescEn" class="sr-only">Descrição em Inglês</label>
+        <input type="text" class="form-control mb-3" id="descen" placeholder="Description" ng-model="value.descen">
+
+        <label for="staticValor" class="sr-only">Valor R$</label>
+        <input type="text" class="form-control mb-3" id="valor" placeholder="Valor em Reais" ng-model="value.valor">
+
+        <label for="staticValue" class="sr-only">Value $</label>
+        <input type="text" class="form-control mb-3" id="value" placeholder="Valor em Dollar" ng-model="value.value">
+
+        <label for="staticModel" class="sr-only">Modelo</label>
+        <input type="text" class="form-control mb-3" id="model" placeholder="Modelos aceitos - 'tabela ao lado' entre com N sem espaço" ng-model="value.model">
+
+        <label for="staticCategory" class="sr-only">Categoria</label>
+        <input type="number" class="form-control mb-3" id="category" placeholder="Categoria da peça" ng-model="value.category">
+
+        <label for="staticImage" class="sr-only">Imagem</label>
+        <input type="text" class="form-control mb-3" id="image" placeholder="Url da imagem" ng-model="value.image">
+
+        <button class="btn btn-primary btn-lg" type="submit" ng-click="createItens(value);">Registrar</button>
+    </div>
+</form> 

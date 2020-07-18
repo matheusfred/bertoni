@@ -7,6 +7,8 @@
 /*
 /* ****************************************************** */
 moduleApp.controller('indexCtrl', function($scope, cfpLoadingBar){
+	firebase.initializeApp(config);
+	
 	cfpLoadingBar.start();
 	$scope.statusmenu = 'home';	
 	$scope.isMobile = false;

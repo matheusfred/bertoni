@@ -9,36 +9,51 @@
 /* ****************************************************** */
 moduleApp.config(function($stateProvider) {
   $stateProvider
-    // HUB PAGE ROUTE
+    // PRINCIPAL MENU 
     .state('home', {
       url: '/home',
-      templateUrl: 'pags/home.html'
-    }) 
-
-    // STORE PAGE ROUTE
-    .state('store', {
-      url: '/store',
-      templateUrl: 'pags/store.html'
-    })
-    .state('store.contact', {
+      templateUrl: 'pags/subpage/home.html'
+    })  
+    .state('contact', {
       url: '/contact',
       templateUrl: 'pags/subpage/contact.html'
     })
+    .state('custom', {
+      url: '/custom',
+      templateUrl: 'pags/subpage/custom.html'
+    })    
+
+    // ADMINISTRATION AREA
+    .state('admin', {
+      url: "/admin",
+      templateUrl: 'pags/admin.html',
+      controller: 'adminCtrl'
+    })  
+    .state('dashboard', {
+      url: "admin/cms",
+      templateUrl: 'pags/subpage/dashboard.html',
+      controller: 'dashboardCtrl',
+      params: {
+        obj: null
+      }
+    })
+    .state('dashboard.new', {
+      url: '/new',
+      templateUrl: 'pags/subpage/dashboard/addform.html',
+      controller: 'dashboardCtrl'
+    })
+    .state('dashboard.list', {
+      url: '/list',
+      templateUrl: 'pags/subpage/dashboard/list.html',
+      controller: 'dashboardCtrl'
+    })                  
+
+
     // .state('store.item.detail', {
     //   url: '/detail/:id',
     //   templateUrl: item-detail.html'
     // });     
 
-    // CUSTOM PROJECTS ROUTE
-    .state('custom', {
-      url: '/custom',
-      templateUrl: 'pags/custom.html'
-    })
-    .state('custom.contact', {
-      url: '/contact',
-      templateUrl: 'pags/subpage/contact.html'
-    })    
-        
     // .state('sucess', {
     //   url: "/sucess",
     //   templateUrl: 'pags/sucess.html'

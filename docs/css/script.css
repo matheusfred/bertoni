@@ -2,10 +2,10 @@
 html,body{height: 100% !important;}
 
 body{ 
-	background-color: black !important;
+	background-color: white !important;
 }
 
-h1{color: rgb(0, 0, 0, 0.7) !important;}
+h1{color: #7e93da !important;}
 h5{font-size: 15px !important; text-transform: uppercase; margin: 5px !important;}
 
 p{margin: 5px !important;}
@@ -26,11 +26,25 @@ ul{list-style: none;padding: 0px;}
 	margin-bottom: 5px;
 	cursor: pointer;
 	color: white;
+	box-shadow: 0px 10px 8px #888888;
+}
+
+.menu-store{
+    height: 583px;
+    background-color: #536292;
 }
 
 .navbar{
 	background-color: #536292;
 	box-shadow: 0 6px 12px 0 rgba(0,0,0,.1)
+}
+
+.logo{
+	z-index: 10;
+	position: fixed;
+	top:0px;
+	height: 350px;
+	width: 350px;
 }
 
 /* PAG CONFIG CSS */
