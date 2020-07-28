@@ -27,7 +27,17 @@ moduleApp.factory('scrapFactory', function() {
 
             return returnData(data);
             });     
-        }
+        },
+
+        loadByCategory: function(model, returnData){
+            firestore.collection("itens").where("modelo", "==", model).get().then(function(querySnapshot) {
+                var data = querySnapshot.docs.map(function (documentSnapshot) {
+                return documentSnapshot.data();
+            });
+
+            return returnData(data);
+            });     
+        }        
     };
   
     

@@ -12,15 +12,24 @@ moduleApp.config(function($stateProvider) {
     // PRINCIPAL MENU 
     .state('home', {
       url: '/home',
-      templateUrl: 'pags/subpage/home.html'
+      templateUrl: 'pags/home.html'
     })  
+    .state('home.store', {
+      url : '/store/{modelID}',
+      params : {
+        obj : null  
+      },
+      templateUrl: 'pags/subpage/store.html'
+    })
+
+
     .state('contact', {
       url: '/contact',
-      templateUrl: 'pags/subpage/contact.html'
+      templateUrl: 'pags/contact.html'
     })
     .state('custom', {
       url: '/custom',
-      templateUrl: 'pags/subpage/custom.html'
+      templateUrl: 'pags/custom.html'
     })    
 
     // ADMINISTRATION AREA

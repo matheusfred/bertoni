@@ -17,12 +17,50 @@
 
         <label for="staticValue" class="sr-only">Value $</label>
         <input type="text" class="form-control mb-3" id="value" placeholder="Valor em Dollar" ng-model="value.value">
+        
+        <select for="staticModel" class="form-control mb-3" name="model" ng-model="value.model">
+            <option value="OFF">MISCELLANEOUS</option>
+            <option value="A">MOPAR</option>
+            <option value="B">FORD</option>
+            <option value="C">VW</option>
+            <option value="D">CHEVROLET</option>
+            <option value="E">HOT ROD</option>
+        </select>
 
-        <label for="staticModel" class="sr-only">Modelo</label>
-        <input type="text" class="form-control mb-3" id="model" placeholder="Modelos aceitos - 'tabela ao lado' entre com N sem espaço" ng-model="value.model">
+        <select for="staticCategory" class="form-control mb-3" name="category" ng-model="value.category">
+            <option value="1">ACABAMENTO</option>
+            <option value="2">ARREFECIMENTO</option>
+            <option value="3">BORRACHAS/VEDAÇÃO</option>
+            <option value="4">CABOS/FREIO/ACELERADOR</option>
+            <option value="5">CAMBIO/EMBREAGEM</option>
+            <option value="6">DIFERENCIAL</option>
+            <option value="7">CORREIAS</option>
+            <option value="8">ELÉTRICA</option>
+            <option value="9">EMBLEMAS</option>
+            <option value="10">FREIO</option>
+            <option value="11">FRISOS</option>
+            <option value="12">JUNTAS</option>
+            <option value="13">LATARIA</option>
+            <option value="14">MOTOR</option>
+            <option value="15">RETENTORES</option>
+            <option value="16">ROLAMENTO</option>
+            <option value="17">SUSPENSÃO/DIREÇÃO</option>
+            <option value="18">CHASSI/ESTRUTURAL</option>
 
-        <label for="staticCategory" class="sr-only">Categoria</label>
-        <input type="number" class="form-control mb-3" id="category" placeholder="Categoria da peça" ng-model="value.category">
+            <option value="19">PEÇAS DE COMPETIÇÃO DRAG/CIRCUITO</option>
+            <option value="20">RODAS</option>
+            <option value="21">VOLANTES</option>
+            <option value="22">MANOPLAS DE CAMBIO</option>
+            <option value="23">TRAMBULADORES/ALAVANCAS</option>
+            <option value="24">BANCOS</option>
+            <option value="25">BERÇOS E DISPOSITIVOS PARA OFICINA</option>
+            <option value="26">PLACAS DECORATIVAS VINTAGE</option>
+            <option value="27">CAMISETAS</option>
+            <option value="28">MINIATURAS</option>
+            <option value="29">PLATIMODELISMO</option>
+            <option value="30">AUTOROMA</option>
+        </select>
+        
 
         <label for="staticImage" class="sr-only">Imagem</label>
         <input type="text" class="form-control mb-3" id="image" placeholder="Url da imagem" ng-model="value.image">

@@ -6,24 +6,28 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('indexCtrl', function($scope, cfpLoadingBar){
+moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar){
 	firebase.initializeApp(config);
 	
 	cfpLoadingBar.start();
-	$scope.statusmenu = 'home';	
-	$scope.isMobile = false;
+	$scope.$state = $state;
 
-	$scope.changeStatus = function(newValue){
+	$scope.storeStatus = function(newValue){
 		cfpLoadingBar.start();
-		$scope.statusmenu =  newValue;
+		$scope.modelID =  newValue;
 		cfpLoadingBar.complete(); 
 	};
 
-	$scope.detectMob = function() {	
-		if (window.innerWidth <= 1024){
-			$scope.isMobile = true;
-		}
-	}; $scope.detectMob();
-
 	cfpLoadingBar.complete();
+
+	// $scope.loadItens = function(model){
+    //     cfpLoadingBar.start();
+	// 	scrapFactory.load(model,returnData);
+
+	// 	function returnData(data){
+	// 		$scope.contents = data;
+	// 		cfpLoadingBar.complete();
+	// 	};
+	// };	
+
 });  
