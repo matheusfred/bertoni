@@ -11,6 +11,7 @@ moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar){
 	
 	cfpLoadingBar.start();
 	$scope.$state = $state;
+	$scope.isMobile = false;
 
 	$scope.storeStatus = function(newValue){
 		cfpLoadingBar.start();
@@ -18,16 +19,11 @@ moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar){
 		cfpLoadingBar.complete(); 
 	};
 
+	$scope.detectMob = function() {	
+		if (window.innerWidth <= 1024){
+			$scope.isMobile = true;
+		}
+	}; $scope.detectMob();
+
 	cfpLoadingBar.complete();
-
-	// $scope.loadItens = function(model){
-    //     cfpLoadingBar.start();
-	// 	scrapFactory.load(model,returnData);
-
-	// 	function returnData(data){
-	// 		$scope.contents = data;
-	// 		cfpLoadingBar.complete();
-	// 	};
-	// };	
-
 });  

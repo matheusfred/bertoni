@@ -19,6 +19,7 @@ moduleApp.config(function($stateProvider) {
       params : {
         obj : null  
       },
+      controller: 'storeCtrl',
       templateUrl: 'pags/subpage/store.html'
     })
 

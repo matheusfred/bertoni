@@ -6,10 +6,11 @@ body{
 }
 
 h1{color: #7e93da !important;}
+h4{margin-bottom: 3px !important;}
 h5{font-size: 15px !important; text-transform: uppercase; margin: 5px !important;}
 
 p{margin: 5px !important;}
-ul{list-style: none;padding: 0px;}
+ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 
 .vcenter {display: flex;align-items: center;flex-wrap: wrap;height: 250.500px}
 .nopadding{padding-right: 0px !important;padding-left: 0px !important;}
@@ -22,8 +23,8 @@ ul{list-style: none;padding: 0px;}
 
 .menu-item{
 	float: left;
-	padding: 5px;
-	margin-bottom: 5px;
+	padding: 0px;
+	margin-bottom: 0px;
 	cursor: pointer;
 	color: white;
 }
@@ -46,9 +47,10 @@ ul{list-style: none;padding: 0px;}
 
 .logo{
 	z-index: 10;
+	left: 50px;
 	position: relative;
-	height: 300px;
-	width: 300px;
+	height: 210px;
+	width: 210px;
 }
 
 .categoria{
@@ -76,8 +78,8 @@ ul{list-style: none;padding: 0px;}
 /****** TABLET ******/
 @media only screen and (max-width: 1024px) {
 	.selected{ 
-		border-bottom: 0px solid rgba(37, 255, 72, 0.58);
-		background-color: rgba(37, 255, 72, 0.58);
+		border-bottom: 0px solid #7e93da;
+		background-color: #7e93da;
 	}
 
 	.hidden-mobile{display: none !important;}
@@ -85,11 +87,15 @@ ul{list-style: none;padding: 0px;}
 }	
 
 @media only screen and (max-width: 768px) {
-
+	.logo{
+		left: 0px;
+	}
 }	 
 
 /****** MOBILE ******/
 @media only screen and (max-width: 450px) {
-
+	.logo{
+		left: 70px;
+	}
 }	
 
