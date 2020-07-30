@@ -5,7 +5,7 @@ moduleApp.factory('scrapFactory', function() {
 	firestore.settings(settings);
   
     return {
-        create: function(value){
+        create: function(value,onSucess){
             firestore.collection('itens').add({
                 name: value.name,
                 desc: value.desc,
@@ -17,6 +17,7 @@ moduleApp.factory('scrapFactory', function() {
                 category: value.category,
                 image: value.image
             })
+            return onSucess();
         },  
 
         load: function(returnData){

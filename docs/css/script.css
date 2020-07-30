@@ -18,6 +18,23 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 
 /* MENU CONFIG CSS */
 
+.msg_content{
+	height: 50px;
+	bottom:0px;
+	text-align: center;
+	font-size: 22px;
+	padding-top: 5px;
+	color: rgb(50,205,50);
+	z-index: 10;
+	display: none;
+	position: fixed !important;
+}
+
+.sucess_msg{
+	display: initial !important;
+	background-color: rgb(152,251,152,0.1);
+}
+
 .selected{ border-bottom: 3px solid #7e93da;}
 .selection{ background-color: #7e93da;}
 
@@ -37,11 +54,9 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 } .menu-lateral-item:hover{color: #7e93da;}
 
 .navbar,
-.menu-model,
 .menu-store{background-color: #536292;}
 
 .menu-store{height: 650px;}
-.menu-model{ padding: 10px;}
 
  /* IMG CONGFIG */
 
@@ -55,6 +70,11 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 
 .categoria{
 	width: 200px;
+}
+
+.img-list{
+	height: 150px;
+	width: 150px;
 }
 
 /* PAG CONFIG CSS */

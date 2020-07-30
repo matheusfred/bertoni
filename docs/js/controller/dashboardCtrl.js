@@ -24,11 +24,19 @@ moduleApp.controller('dashboardCtrl', function(scrapFactory, $scope, $state, $st
 		};
 	};	
 
+	$scope.loadItens();
+
 	$scope.createItens = function(value){
 		cfpLoadingBar.start();
 
-		scrapFactory.create(value);
+		scrapFactory.create(value,onSucess);
 
+		function onSucess(){
+			var div = document.getElementById("sucess_msg");
+			div.classList.add("sucess_msg");
+			$state.go('dashboard.list');
+			window.setTimeout(function() {div.classList.remove("sucess_msg");}, 3000);
+		};
 		cfpLoadingBar.complete();
 	};
 
