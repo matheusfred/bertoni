@@ -30,14 +30,24 @@ moduleApp.factory('scrapFactory', function() {
             });     
         },
 
-        loadByCategory: function(returnData, model){
-            firestore.collection("itens").where("category", "==", model).get().then(function(querySnapshot) {
+        loadByCategory: function(returnData, modelo, store){
+            firestore.collection("itens").where("modelo", "==", modelo).where("category", "==", store).get().then(function(querySnapshot) {
                 var data = querySnapshot.docs.map(function (documentSnapshot) {
                 return documentSnapshot.data();
             });
 
             return returnData(data);
             });     
-        }        
+        },
+
+        getCategory: function(callData){
+            firestore.collection("menu").orderBy("id", "asc").get().then(function(querySnapshot) {
+                var data = querySnapshot.docs.map(function (documentSnapshot) {
+                return documentSnapshot.data();
+            });
+
+            return callData(data);
+            });     
+        }
     }; 
 }); 

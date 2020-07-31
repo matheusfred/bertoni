@@ -21,3 +21,5 @@ const config = {
     authDomain: "bertoni-218f8.firebaseapp.com",
     projectId: "bertoni-218f8"
 };
+
+firebase.initializeApp(config);

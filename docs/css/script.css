@@ -54,6 +54,7 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 } .menu-lateral-item:hover{color: #7e93da;}
 
 .navbar,
+.store,
 .menu-store{background-color: #536292;}
 
 .menu-store{height: 650px;}
@@ -75,6 +76,12 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 .img-list{
 	height: 150px;
 	width: 150px;
+}
+
+/* STORE CONFIG */
+
+.store{
+	height: 579px;
 }
 
 /* PAG CONFIG CSS */

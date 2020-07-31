@@ -6,10 +6,11 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('storeCtrl', function(scrapFactory,  $scope, cfpLoadingBar){
+moduleApp.controller('storeCtrl', function(scrapFactory, $stateParams, $scope, cfpLoadingBar){  
+    
     $scope.loadItens = function(){
         cfpLoadingBar.start();
-        scrapFactory.loadByCategory(returnData, $scope.modelID);
+        scrapFactory.loadByCategory(returnData,  $stateParams.modelID, $stateParams.storeID);
     
         function returnData(data){
             $scope.contents = data;

@@ -14,8 +14,14 @@ moduleApp.config(function($stateProvider) {
       url: '/home',
       templateUrl: 'pags/home.html'
     })  
-    .state('home.store', {
-      url : '/store/{modelID}',
+    .state('home.model', {
+      url : '/{modelID}',
+      params : {
+        obj : null  
+      }
+    })
+    .state('home.model.store', {
+      url : '/{storeID}',
       params : {
         obj : null  
       },

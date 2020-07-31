@@ -6,17 +6,17 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar){
-	firebase.initializeApp(config);
-	
+moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar, scrapFactory){	
 	cfpLoadingBar.start();
+	$scope.storeID = '';
 	$scope.$state = $state;
 	$scope.isMobile = false;
 
-	$scope.storeStatus = function(newValue){
+	$scope.storeStatus = function(storeID){
 		cfpLoadingBar.start();
-		$scope.modelID =  newValue;
+		$scope.storeID =  storeID;
 		cfpLoadingBar.complete(); 
+		$state.go('home.model.store', {storeID: $scope.storeID});
 	};
 
 	$scope.detectMob = function() {	
@@ -24,6 +24,15 @@ moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar){
 			$scope.isMobile = true;
 		}
 	}; $scope.detectMob();
+
+	$scope.getCategory = function(){
+		scrapFactory.getCategory(callData);
+
+		function callData(data){
+			$scope.contentsMenu = data;
+		}
+	};
+
 
 	cfpLoadingBar.complete();
 });  
