@@ -2,9 +2,9 @@
     <div class="col-md-12 store">
         <div class="row">
             <div class="col-lg-2 mt-4" ng-repeat="item in contents">
-                <img class="img-list mb-2" src="{{item.image}}" alt="">
+                <img class="img-list animate-show mb-2" ng-src="{{item.image}}" fade-in>
                 <h4>R${{item.valor}}</h4>
-                <h5>{{item.name}}</h3>
+                <a ng-click="itemStatus($index)" ><h5>{{item.name}}</h5></a>
             </div>
         </div>
     </div>

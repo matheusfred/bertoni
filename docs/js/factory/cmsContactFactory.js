@@ -2,7 +2,7 @@ moduleApp.factory('scrapFactory', function() {
 	const firestore = firebase.firestore();
     const settings = {timestampsInSnapshots: true};
 
-	firestore.settings(settings);
+    firestore.settings(settings);    
   
     return {
         create: function(value,onSucess){
@@ -30,8 +30,8 @@ moduleApp.factory('scrapFactory', function() {
             });     
         },
 
-        loadByCategory: function(returnData, modelo, store){
-            firestore.collection("itens").where("modelo", "==", modelo).where("category", "==", store).get().then(function(querySnapshot) {
+        loadByCategory: function(returnData, store){
+            firestore.collection("itens").where("category", "==", store).get().then(function(querySnapshot) {
                 var data = querySnapshot.docs.map(function (documentSnapshot) {
                 return documentSnapshot.data();
             });
@@ -40,8 +40,8 @@ moduleApp.factory('scrapFactory', function() {
             });     
         },
 
-        getCategory: function(callData){
-            firestore.collection("menu").orderBy("id", "asc").get().then(function(querySnapshot) {
+        loadSingleItem: function(callData, item){
+            firestore.collection("itens").where("category", "==", item).get().then(function(querySnapshot) {
                 var data = querySnapshot.docs.map(function (documentSnapshot) {
                 return documentSnapshot.data();
             });

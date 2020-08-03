@@ -10,7 +10,7 @@ var moduleApp = angular.module('moduleApp', ['ngAnimate', 'ui.router', 'angular-
 .config([
     'cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.latencyThreshold = 500;
-        cfpLoadingBarProvider.includeSpinner  = false;
+        cfpLoadingBarProvider.includeSpinner  = true;
     }
 ]);
 

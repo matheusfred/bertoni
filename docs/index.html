@@ -16,148 +16,95 @@
 	</head>
 
 	<body ng-controller="indexCtrl">
-		<div class="col-lg-12">
-			<div class="row">
-				<div class="col-lg-2 col-sm-4 col-xs-12 menu-store">
-					<img class="logo" src="img/logo.png" alt="logo">
-					<div id="accordion">
-						<h4 class="menu-lateral-item" id="headingOne" 
-							data-toggle="collapse" 
-							data-target="#toggle-CustomItem" 
-							aria-expanded="true" 
-							aria-controls="toggle-CustomItem"
-							ui-sref="home.model({modelID: 'OFF'})">
-							CUSTOM ITEM
-						</h4>
-						<ul id="toggle-CustomItem" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-							<li class="menu-lateral-item" ng-click="storeStatus('19');">- PEÇAS DE COMPETIÇÃO DRAG/CIRCUITO</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('20');">- RODAS</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('21');">- VOLANTES</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('22');">- MANOPLAS DE CAMBIO</li>						
-							<li class="menu-lateral-item" ng-click="storeStatus('23');">- TRAMBULADORES/ALAVANCAS</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('24');">- BANCOS</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('25');">- BERÇOS E DISPOSITIVOS PARA OFICINA</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('26');">- PLACAS DECORATIVAS VINTAGE</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('27');">- CAMISETAS</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('28');">- MINIATURAS</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('29');">- PLATIMODELISMO</li>
-							<li class="menu-lateral-item" ng-click="storeStatus('30');">- AUTOROMA</li>
-						</ul>
+		<div class="col-lg-2 col-sm-4 col-xs-12 menu-store">
+			<img class="logo" src="img/logo.png" alt="logo">
+			<div id="accordion">
+				<h4 class="menu-lateral-item" id="headingOne" 
+					data-toggle="collapse" 
+					data-target="#toggle-CustomItem" 
+					aria-expanded="true" 
+					aria-controls="toggle-CustomItem">
+					CUSTOM ITEM
+				</h4>
+				<ul id="toggle-CustomItem" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+					<li class="menu-lateral-item" ng-click="storeStatus('19');">- PEÇAS DE COMPETIÇÃO DRAG/CIRCUITO</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('20');">- RODAS</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('21');">- VOLANTES</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('22');">- MANOPLAS DE CAMBIO</li>						
+					<li class="menu-lateral-item" ng-click="storeStatus('23');">- TRAMBULADORES/ALAVANCAS</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('24');">- BANCOS</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('25');">- BERÇOS E DISPOSITIVOS PARA OFICINA</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('26');">- PLACAS DECORATIVAS VINTAGE</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('27');">- CAMISETAS</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('28');">- MINIATURAS</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('29');">- PLATIMODELISMO</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('30');">- AUTOROMA</li>
+				</ul>
 
-						<h4 class="menu-lateral-item" id="headingTwo" 
-							data-toggle="collapse" 
-							data-target="#toggle-MOPAR" 
-							aria-expanded="true" 
-							aria-controls="toggle-MOPAR"
-							ui-sref="home.model({modelID: 'A'})"
-							ng-click="getCategory();">
-							MOPAR
-						</h4>
-						<ul id="toggle-MOPAR" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-							<li class="menu-lateral-item"	
-								ng-repeat="menu in contentsMenu" ng-click="storeStatus(menu.id);">- {{menu.name}}
-							</li>				
-						</ul>	
-
-						<h4 class="menu-lateral-item" id="headingThree" 
-							data-toggle="collapse" 
-							data-target="#toggle-CHEVROLET" 
-							aria-expanded="true" 
-							aria-controls="toggle-CHEVROLET"
-							ui-sref="home.model({modelID: 'B'})">
-							CHEVROLET
-						</h4>
-						<ul id="toggle-CHEVROLET" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-							<li class="menu-lateral-item" 
-								ng-click="storeStatus('{{menu.id}}');" 
-								ng-repeat="menu in contentsMenu">- {{menu.name}}
-							</li>
-						</ul>
-
-						<h4 class="menu-lateral-item" id="headingFour"
-							data-toggle="collapse" 
-							data-target="#toggle-FORD" 
-							aria-expanded="true" 
-							aria-controls="toggle-FORD"
-							ui-sref="home.model({modelID: 'C'})">
-							FORD
-						</h4>
-						<ul id="toggle-FORD" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-							<li class="menu-lateral-item" 
-								ng-click="storeStatus('{{menu.id}}');" 
-								ng-repeat="menu in contentsMenu">- {{menu.name}}
-							</li>
-						</ul>
-
-						<h4 class="menu-lateral-item" id="headingSix" 
-							data-toggle="collapse" 
-							data-target="#toggle-HOTROD" 
-							aria-expanded="true" 
-							aria-controls="toggle-HOTROD"
-							ui-sref="home.model({modelID: 'D'})">
-							HOT ROD
-						</h4>
-						<ul id="toggle-HOTROD" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
-							<li class="menu-lateral-item" 
-								ng-click="storeStatus('{{menu.id}}');" 
-								ng-repeat="menu in contentsMenu">- {{menu.name}}
-							</li>
-						</ul>
-
-						<h4 class="menu-lateral-item" id="headingSeven" 
-							data-toggle="collapse" 
-							data-target="#toggle-VOLKS" 
-							aria-expanded="true" 
-							aria-controls="toggle-VOLKS"
-							ui-sref="home.model({modelID: 'E'})">
-							VOLKSWAGEN
-						</h4>
-						<ul id="toggle-VOLKS" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
-							<li class="menu-lateral-item" 
-								ng-click="storeStatus('{{menu.id}}');" 
-								ng-repeat="menu in contentsMenu">- {{menu.name}}
-							</li>
-						</ul>																																								
-					</div>											
-				</div>			
-				
-				<!-- NAVBAR -->
-				<div class="col-lg-10 col-sm-8 nopadding">
-					<nav class="navbar container-fluid">
-						<ul class="col-12 mt-1 mb-1" ng-class="{'collapse mt-0': isMobile}" id="toggle-BtnMobile">
-							<li class="col-lg-2 col-md-12 offset-lg-6 text-center menu-item" ui-sref="home"  ng-class="{selected: $state.includes('home')}">
-								<h5>HOME</h5>
-							</li>	
-							<li class="col-lg-2 col-md-12 text-center menu-item" ui-sref="contact" ng-class="{selected: $state.includes('contact')}">
-								<h5>Contact</h5>
-							</li>																						
-							<li class="col-lg-2 col-md-12 text-center menu-item" ui-sref="custom" ng-class="{selected: $state.includes('custom')}">
-								<h5>Custom Project</h5>
-							</li>																																									
-						</ul>
-			
-						<div class="col-sm-12 btn-mobile navbar-dark">
-							<button class="navbar-toggler float-right" type="button" 
-								data-toggle="collapse" 
-								data-target="#toggle-BtnMobile"
-								aria-controls="toggle-BtnMobile" 
-								aria-expanded="false" 
-								aria-label="Toggle navigation">
-								<span class="navbar-toggler-icon"></span>
-							</button>
-						</div>				
-					</nav>
-									
+				<h4 class="menu-lateral-item" id="headingOne" 
+					data-toggle="collapse" 
+					data-target="#toggle-StoreItem" 
+					aria-expanded="true" 
+					aria-controls="toggle-StoreItem">
+					STORE
+				</h4>
+				<ul id="toggle-StoreItem" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+					<li class="menu-lateral-item" ng-click="storeStatus('1');">- ACABAMENTO</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('2');">- ARREFECIMENTO</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('3');">- BORRACHAS/VEDAÇÃO</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('4');">- CABOS/FREIO/ACELERADOR</li>						
+					<li class="menu-lateral-item" ng-click="storeStatus('5');">- CAMBIO/EMBREAGEM</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('6');">- DIFERENCIAL</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('7');">- CORREIAS</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('8');">- ELÉTRICA</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('9');">- EMBLEMAS</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('10');">- FREIO</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('11');">- FRISOS</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('12');">- JUNTAS</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('13');">- LATARIA</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('14');">- MOTOR</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('15');">- RETENTORES</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('16');">- ROLAMENTO</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('17');">- SUSPENSÃO/DIREÇÃO</li>
+					<li class="menu-lateral-item" ng-click="storeStatus('18');">- CHASSI/ESTRUTURAL</li>									
+				</ul>																																								
+			</div>											
+		</div>		
 		
-					<!-- VIEW'S -->
-					<div class="col-lg-12 transition pt-3" >
-						<div class="container" ui-view>
-						</div>
-					</div>	
-				</div>	
-			</div>
-		</div>	
+		<!-- NAVBAR -->
+		<div class="col-lg-12 col-sm-8 nopadding">
+			<nav class="navbar container-fluid">
+				<ul class="col-12 mt-1 mb-1" ng-class="{'collapse mt-0': isMobile}" id="toggle-BtnMobile">
+					<li class="col-lg-2 col-md-12 offset-lg-6 text-center menu-item" ui-sref="home"  ng-class="{selected: $state.includes('home')}">
+						<h5>HOME</h5>
+					</li>	
+					<li class="col-lg-2 col-md-12 text-center menu-item" ui-sref="contact" ng-class="{selected: $state.includes('contact')}">
+						<h5>Contact</h5>
+					</li>																						
+					<li class="col-lg-2 col-md-12 text-center menu-item" ui-sref="custom" ng-class="{selected: $state.includes('custom')}">
+						<h5>Custom Project</h5>
+					</li>																																									
+				</ul>
+	
+				<div class="col-sm-12 btn-mobile navbar-dark">
+					<button class="navbar-toggler float-right" type="button" 
+						data-toggle="collapse" 
+						data-target="#toggle-BtnMobile"
+						aria-controls="toggle-BtnMobile" 
+						aria-expanded="false" 
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>				
+			</nav>
+							
 
+			<!-- VIEW'S -->
+			<div class="offset-lg-2 col-lg-10 transition pt-3" >
+				<div class="container" ui-view>
+				</div>
+			</div>	
+		</div>	
 
 		<!-- SCRIPT LIBS -->
 		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
@@ -170,13 +117,18 @@
 		<!-- ANGULAR CONTROLLERS -->
 		<script src="js/app.js"></script>
 		<script src="js/routes.js"></script>
-		<script src="js/factory/cmsContactFactory.js"></script>
-
+		
 		<script src="js/controller/adminCtrl.js"></script>
 		<script src="js/controller/indexCtrl.js"></script> 
 		<script src="js/controller/storeCtrl.js"></script>  
 		<script src="js/controller/dashboardCtrl.js"></script>
+		<script src="js/controller/itemDetailCtrl.js"></script>
 
+		<!-- ANGULAR CONTROLLERS -->
+		<script src="js/factory/cmsContactFactory.js"></script>
+
+		<!-- ANGULAR CONTROLLERS -->
+		<script src="js/directive/fadeIn.js"></script>
 
 		<div class="col-md-12 msg_content" id="sucess_msg">
 			Enviado com sucesso! 

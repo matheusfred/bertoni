@@ -1,8 +1,9 @@
 /* DEFAULT CONFIG CSS */
-html,body{height: 100% !important;}
-
+html,
 body{ 
+	position: relative;
 	background-color: white !important;
+	height: 100% !important;
 }
 
 h1{color: #7e93da !important;}
@@ -57,16 +58,13 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 .store,
 .menu-store{background-color: #536292;}
 
-.menu-store{height: 650px;}
+.menu-store{height: 100% ;position: absolute !important;z-index: 10;}
 
  /* IMG CONGFIG */
 
 .logo{
 	z-index: 10;
-	left: 50px;
 	position: relative;
-	height: 210px;
-	width: 210px;
 }
 
 .categoria{
@@ -92,6 +90,19 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 }
 
 /* TRANSITION */
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+    transition: all linear 0.5s;
+    display: block !important;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove {
+    opacity: 0;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+}
 
 .transition.ng-enter {
   transition: 0.7s linear all;

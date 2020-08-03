@@ -16,7 +16,7 @@ moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar, scrapF
 		cfpLoadingBar.start();
 		$scope.storeID =  storeID;
 		cfpLoadingBar.complete(); 
-		$state.go('home.model.store', {storeID: $scope.storeID});
+		$state.go('home.store', {storeID: $scope.storeID});
 	};
 
 	$scope.detectMob = function() {	
@@ -31,7 +31,7 @@ moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar, scrapF
 		function callData(data){
 			$scope.contentsMenu = data;
 		}
-	};
+	}; 
 
 
 	cfpLoadingBar.complete();

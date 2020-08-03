@@ -14,13 +14,7 @@ moduleApp.config(function($stateProvider) {
       url: '/home',
       templateUrl: 'pags/home.html'
     })  
-    .state('home.model', {
-      url : '/{modelID}',
-      params : {
-        obj : null  
-      }
-    })
-    .state('home.model.store', {
+    .state('home.store', {
       url : '/{storeID}',
       params : {
         obj : null  
@@ -28,7 +22,14 @@ moduleApp.config(function($stateProvider) {
       controller: 'storeCtrl',
       templateUrl: 'pags/subpage/store.html'
     })
-
+    .state('home.store.item', {
+      url : '/{itemID}',
+      params : {
+        obj : null  
+      },
+      controller: 'itemDetailCtrl',
+      templateUrl: 'pags/subpage/item.html'
+    })
 
     .state('contact', {
       url: '/contact',
