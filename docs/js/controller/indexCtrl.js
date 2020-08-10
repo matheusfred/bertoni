@@ -6,33 +6,29 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar, scrapFactory){	
+moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar, $rootScope){	
 	cfpLoadingBar.start();
-	$scope.storeID = '';
+
+	$rootScope.menus = [
+		'10','19','17','23','14','1'
+	];
+	
+	$scope.hasCategory = function(role){
+		var indexOfRole = $rootScope.menus.indexOf(role);
+		
+		if (indexOfRole === -1)
+			return false;
+		else
+			return true;
+	};
+
+	//MENU STATE
 	$scope.$state = $state;
 	$scope.isMobile = false;
-
-	$scope.storeStatus = function(storeID){
-		cfpLoadingBar.start();
-		$scope.storeID =  storeID;
-		cfpLoadingBar.complete(); 
-		$state.go('home.store', {storeID: $scope.storeID});
-	};
 
 	$scope.detectMob = function() {	
 		if (window.innerWidth <= 1024){
 			$scope.isMobile = true;
 		}
 	}; $scope.detectMob();
-
-	$scope.getCategory = function(){
-		scrapFactory.getCategory(callData);
-
-		function callData(data){
-			$scope.contentsMenu = data;
-		}
-	}; 
-
-
-	cfpLoadingBar.complete();
 });  

@@ -9,36 +9,40 @@
 /* ****************************************************** */
 moduleApp.config(function($stateProvider) {
   $stateProvider
-    // PRINCIPAL MENU 
+    // SIMPLE PAGS 
     .state('home', {
       url: '/home',
       templateUrl: 'pags/home.html'
     })  
-    .state('home.store', {
-      url : '/{storeID}',
-      params : {
-        obj : null  
-      },
-      controller: 'storeCtrl',
-      templateUrl: 'pags/subpage/store.html'
-    })
-    .state('home.store.item', {
-      url : '/{itemID}',
-      params : {
-        obj : null  
-      },
-      controller: 'itemDetailCtrl',
-      templateUrl: 'pags/subpage/item.html'
-    })
 
     .state('contact', {
       url: '/contact',
+      controller: 'contactCtrl',
       templateUrl: 'pags/contact.html'
     })
     .state('custom', {
       url: '/custom',
       templateUrl: 'pags/custom.html'
-    })    
+    })      
+
+    // STORE
+    .state('store', {
+      url: '/store',
+      templateUrl: 'pags/store.html'
+    })      
+    .state('store.list', {
+      url : '/{listID}',
+      controller: 'storeCtrl',
+      templateUrl: 'pags/subpage/itemList.html'
+    })
+    .state('store.item', {
+      url : '/{itemID}',
+      params : {
+        item : null  
+      },
+      controller: 'itemDetailCtrl',
+      templateUrl: 'pags/subpage/item.html'
+    })  
 
     // ADMINISTRATION AREA
     .state('admin', {
@@ -59,35 +63,27 @@ moduleApp.config(function($stateProvider) {
       templateUrl: 'pags/subpage/dashboard/addform.html',
       controller: 'dashboardCtrl'
     })
+    .state('dashboard.edit', {
+      url: '/edit',
+      templateUrl: 'pags/subpage/dashboard/addform.html',
+      params: {
+        item: null
+      },
+      controller: 'editCtrl'
+    })      
     .state('dashboard.list', {
       url: '/list',
       templateUrl: 'pags/subpage/dashboard/list.html',
       controller: 'dashboardCtrl'
-    })                  
-
-
-    // .state('store.item.detail', {
-    //   url: '/detail/:id',
-    //   templateUrl: item-detail.html'
-    // });     
-
-    // .state('sucess', {
-    //   url: "/sucess",
-    //   templateUrl: 'pags/sucess.html'
-    // })  
-
-    // .state('admin', {
-    //   url: "/admin",
-    //   templateUrl: 'pags/admin.html',
-    //   controller: 'adminCtrl'
-    // })  
-    // .state('dashboard', {
-    //   url: "admin/cms",
-    //   templateUrl: 'pags/dashboard.html',
-    //   controller: 'dashboardCtrl',
-    //   params: {
-    //     obj: null
-    //   }
-    // })    
-
+    })  
+    .state('dashboard.scrap', {
+      url: '/scrap',
+      templateUrl: 'pags/subpage/dashboard/listScrap.html',
+      controller: 'dashboardCtrl'
+    })
+    .state('dashboard.config', {
+      url: '/config',
+      templateUrl: 'pags/subpage/dashboard/config.html',
+      controller: 'dashboardCtrl'
+    })                           
 });

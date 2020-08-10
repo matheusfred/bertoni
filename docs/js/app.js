@@ -6,7 +6,7 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-var moduleApp = angular.module('moduleApp', ['ngAnimate', 'ui.router', 'angular-loading-bar'])
+var moduleApp = angular.module('moduleApp', ['ngAnimate', 'ui.router', 'angular-loading-bar', 'angularUtils.directives.dirPagination'])
 .config([
     'cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.latencyThreshold = 500;

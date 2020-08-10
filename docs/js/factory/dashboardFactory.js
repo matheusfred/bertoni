@@ -1,4 +1,4 @@
-moduleApp.factory('scrapFactory', function() {
+moduleApp.factory('dashboardFactory', function() {
 	const firestore = firebase.firestore();
     const settings = {timestampsInSnapshots: true};
 
@@ -28,26 +28,22 @@ moduleApp.factory('scrapFactory', function() {
 
             return returnData(data);
             });     
-        },
+        }, 
 
-        loadByCategory: function(returnData, store){
-            firestore.collection("itens").where("category", "==", store).get().then(function(querySnapshot) {
-                var data = querySnapshot.docs.map(function (documentSnapshot) {
-                return documentSnapshot.data();
-            });
-
-            return returnData(data);
-            });     
-        },
-
-        loadSingleItem: function(callData, item){
-            firestore.collection("itens").where("category", "==", item).get().then(function(querySnapshot) {
+        loadScrap: function(callData){
+            firestore.collection("scraptmsg").get().then(function(querySnapshot) {
                 var data = querySnapshot.docs.map(function (documentSnapshot) {
                 return documentSnapshot.data();
             });
 
             return callData(data);
             });     
+        },
+        
+        addMenu: function () {
+            $rootScope.menus.push(angular.copy($scope.contentsMenu));
+
+            return true;
         }
-    }; 
-}); 
+    }
+});    

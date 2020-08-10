@@ -6,26 +6,16 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('storeCtrl', function(scrapFactory, $stateParams, $state, $scope, cfpLoadingBar){  
+moduleApp.controller('storeCtrl', function(storeFactory, $stateParams, $scope, cfpLoadingBar,  $state){  
     
     $scope.loadItens = function(){
         cfpLoadingBar.start();
-        scrapFactory.loadByCategory(returnData, $stateParams.storeID);
+        storeFactory.loadStoreList(returnData, $stateParams.listID);
     
         function returnData(data){
             $scope.contents = data;
-            console.log(data);
             cfpLoadingBar.complete();
         };
     };
-
     $scope.loadItens();
-
-
-    $scope.itemStatus = function(itemID){
-		cfpLoadingBar.start();
-		$scope.itemID = itemID;
-		cfpLoadingBar.complete(); 
-		$state.go('home.store.item', {itemID: $scope.itemID});
-	};
 });  

@@ -2,6 +2,7 @@
 html,
 body{ 
 	position: relative;
+	color: white !important;
 	background-color: white !important;
 	height: 100% !important;
 }
@@ -10,6 +11,10 @@ h1{color: #7e93da !important;}
 h4{margin-bottom: 3px !important;}
 h5{font-size: 15px !important; text-transform: uppercase; margin: 5px !important;}
 
+a{color: #7e93da;}
+a:hover{text-decoration: none !important;color: #7e93da !important;}
+a:visited{color: honeydew;}
+
 p{margin: 5px !important;}
 ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 
@@ -17,7 +22,7 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 .nopadding{padding-right: 0px !important;padding-left: 0px !important;}
 .btn-mobile{visibility: hidden;display: none;}
 
-/* MENU CONFIG CSS */
+.navbar,.store,.menu-store,.store-detail,.home-page{background-color: #536292;}
 
 .msg_content{
 	height: 50px;
@@ -35,6 +40,8 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 	display: initial !important;
 	background-color: rgb(152,251,152,0.1);
 }
+
+/* MENU CONFIG CSS */
 
 .selected{ border-bottom: 3px solid #7e93da;}
 .selection{ background-color: #7e93da;}
@@ -54,21 +61,14 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 	cursor: pointer;
 } .menu-lateral-item:hover{color: #7e93da;}
 
-.navbar,
-.store,
-.menu-store{background-color: #536292;}
-
 .menu-store{height: 100% ;position: absolute !important;z-index: 10;}
+.menu-model img{height: 50px;width: 80px;}
 
  /* IMG CONGFIG */
 
 .logo{
 	z-index: 10;
 	position: relative;
-}
-
-.categoria{
-	width: 200px;
 }
 
 .img-list{
@@ -78,9 +78,18 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 
 /* STORE CONFIG */
 
+.store-detail,
 .store{
-	height: 579px;
+	height: 500px;
 }
+
+.store-name{height: 20px; text-overflow: ellipsis; overflow: hidden;white-space: nowrap;display: block;cursor: pointer;}	
+
+dir-pagination-controls ul{font-size: 20px;bottom: initial;}
+dir-pagination-controls ul:hover{text-decoration: none;}
+dir-pagination-controls li{padding-left: 15px;padding-right: 15px; border: solid 1px white;}
+dir-pagination-controls li:last-child{border-top-right-radius: .25rem;border-bottom-right-radius: .25rem;}
+dir-pagination-controls	li:first-child{border-top-left-radius: .25rem;border-bottom-left-radius: .25rem;}
 
 /* PAG CONFIG CSS */
 
@@ -89,7 +98,7 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
  height: 450px;
 }
 
-/* TRANSITION */
+/* TRANSITION IMG*/
 
 .animate-show.ng-hide-add, .animate-show.ng-hide-remove {
     transition: all linear 0.5s;
@@ -103,6 +112,8 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 .animate-show.ng-hide-add, .animate-show.ng-hide-remove.ng-hide-remove-active {
     opacity: 1;
 }
+
+/* TRANSITION */
 
 .transition.ng-enter {
   transition: 0.7s linear all;

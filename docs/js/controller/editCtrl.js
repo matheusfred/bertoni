@@ -6,6 +6,7 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('itemDetailCtrl', function($stateParams,$scope){   
-    $scope.calledItem = $stateParams.item;
+moduleApp.controller('editCtrl', function($stateParams,$scope){   
+    $scope.value = $stateParams.item;
+    console.log($scope.value);
 });  
