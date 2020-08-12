@@ -7,7 +7,6 @@ body{
 	height: 100% !important;
 }
 
-h3{color: #7e93da !important;}
 h4{margin-bottom: 3px !important;}
 h5{font-size: 15px !important; text-transform: uppercase; margin: 5px !important;}
 
@@ -99,6 +98,8 @@ dir-pagination-controls	li:first-child{border-top-left-radius: .25rem;border-bot
  overflow: auto;
  height: 450px;
 }
+
+.blue{border-radius: 7px;}
 
 /* TRANSITION IMG*/
 
