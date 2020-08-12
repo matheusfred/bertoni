@@ -14,13 +14,14 @@ moduleApp.controller('dashboardCtrl', function(dashboardFactory, $scope, $state,
 		else $state.go('admin');	
 	};
 	
-	$scope.loadItens = function(){
+	$scope.$state = $state;
+
+	$scope.loadItems = function(){
 		cfpLoadingBar.start();
 		dashboardFactory.load(returnData);
 
 		function returnData(data){
 			$scope.contents = data;
-			console.log($scope.contents);
 			cfpLoadingBar.complete();
 		};
 	};	
@@ -35,10 +36,12 @@ moduleApp.controller('dashboardCtrl', function(dashboardFactory, $scope, $state,
 		};
 	};
 
-	$scope.createItens = function(value){
+	$scope.createItems = function(value){
 		cfpLoadingBar.start();
 
-		dashboardFactory.create(value,onSucess);
+		var editid = Math.floor(Math.random() *10000000);
+
+		dashboardFactory.create(value,editid,onSucess);
 
 		function onSucess(){
 			var div = document.getElementById("sucess_msg");
@@ -48,5 +51,4 @@ moduleApp.controller('dashboardCtrl', function(dashboardFactory, $scope, $state,
 		};
 		cfpLoadingBar.complete();
 	};
-
 });

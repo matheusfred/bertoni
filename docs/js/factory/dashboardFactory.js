@@ -5,15 +5,19 @@ moduleApp.factory('dashboardFactory', function() {
     firestore.settings(settings);    
   
     return {
-        create: function(value,onSucess){
+        create: function(value,editid,onSucess){
             firestore.collection('itens').add({
+                editid: editid,
                 name: value.name,
                 desc: value.desc,
                 nameen: value.nameen,
                 descen: value.descen,
                 valor: value.valor,
                 value: value.value,
-                modelo: value.model,
+                modelo: value.modelo,
+                po: value.po,
+                fabricante: value.fabricante,
+                status: value.status,
                 category: value.category,
                 image: value.image
             })
@@ -38,12 +42,6 @@ moduleApp.factory('dashboardFactory', function() {
 
             return callData(data);
             });     
-        },
-        
-        addMenu: function () {
-            $rootScope.menus.push(angular.copy($scope.contentsMenu));
-
-            return true;
         }
     }
 });    

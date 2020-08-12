@@ -9,19 +9,6 @@
 moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar, $rootScope){	
 	cfpLoadingBar.start();
 
-	$rootScope.menus = [
-		'10','19','17','23','14','1'
-	];
-	
-	$scope.hasCategory = function(role){
-		var indexOfRole = $rootScope.menus.indexOf(role);
-		
-		if (indexOfRole === -1)
-			return false;
-		else
-			return true;
-	};
-
 	//MENU STATE
 	$scope.$state = $state;
 	$scope.isMobile = false;
