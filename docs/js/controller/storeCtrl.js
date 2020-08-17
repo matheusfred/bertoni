@@ -19,6 +19,9 @@ moduleApp.controller('storeCtrl', function(storeFactory, $stateParams, $scope, c
             $scope.contents = data;
             if($scope.contents.length === 0){
                 $state.go('contact');
+                var div = document.getElementById("error_msg");
+                div.classList.add("error_msg");
+                window.setTimeout(function() {div.classList.remove("error_msg");}, 3000);
             }
             cfpLoadingBar.complete();
         };      

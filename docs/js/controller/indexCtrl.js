@@ -14,26 +14,6 @@ moduleApp.controller('indexCtrl', function($state, $scope, cfpLoadingBar, storeF
 		$scope.statusModelo =  newValue;
 	};
 
-	$scope.statusPointer = '';	
-	$scope.changePointer = function(newValue){
-        $scope.statusPointer =  newValue;
-        if(newValue!= null & $scope.statusModelo != null){
-            storeFactory.poitLoader(returnData, $stateParams.listID,$scope.statusModelo);
-            $state.go('store.modelo.list({listID: $scope.statusPointer})');
-		} else { 
-			storeFactory.loadStoreList(returnData, newValue);
-			$state.go('store.list({listID: newValue})');
-		}
-
-        function returnData(data){
-            $scope.contents = data;
-            if($scope.contents.length === 0){
-                $state.go('contact');
-            }
-            cfpLoadingBar.complete();
-        }; 
-	};	
-
 	//MENU STATE
 	$scope.$state = $state;
 	$scope.isMobile = false;
