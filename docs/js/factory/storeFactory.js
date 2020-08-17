@@ -13,6 +13,34 @@ moduleApp.factory('storeFactory', function() {
 
             return returnData(data);
             });     
-        }
+        },
+        loadModelo: function(returnData, modelo){
+            firestore.collection("itens").where("modelo", "==", modelo).get().then(function(querySnapshot) {
+                var data = querySnapshot.docs.map(function (documentSnapshot) {
+                return documentSnapshot.data();
+            });
+
+            return returnData(data);
+            });     
+        },
+        poitLoader: function(returnData, store, modelo){
+            firestore.collection("itens").where("category", "==", store).where("modelo", "==", modelo).get().then(function(querySnapshot) {
+                var data = querySnapshot.docs.map(function (documentSnapshot) {
+                return documentSnapshot.data();
+            });
+
+            return returnData(data);
+            });     
+        },
+        getCategory: function(callData){
+            firestore.collection("menu").orderBy("id", "asc").get().then(function(querySnapshot) {
+                var data = querySnapshot.docs.map(function (documentSnapshot) {
+                return documentSnapshot.data();
+            });
+
+            return callData(data);
+            });     
+        }        
+        
     }
 });    

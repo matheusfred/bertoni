@@ -13,7 +13,7 @@ moduleApp.config(function($stateProvider) {
     .state('home', {
       url: '/home',
       templateUrl: 'pags/home.html'
-    })  
+    })      
 
     .state('contact', {
       url: '/contact',
@@ -28,10 +28,19 @@ moduleApp.config(function($stateProvider) {
     // STORE
     .state('store', {
       url: '/store',
-      templateUrl: 'pags/store.html'
+      templateUrl: 'pags/home.html'
     })      
+    .state('store.modelo', {
+      url: '/:modeloID',
+      controller: 'storeCtrl',
+      templateUrl: 'pags/subpage/itemList.html'
+    })
+    .state('store.modelo.list', {
+      url: '/:listID',
+      controller: 'storeCtrl'
+    })        
     .state('store.list', {
-      url : '/{listID}',
+      url : '/:listID',
       controller: 'storeCtrl',
       templateUrl: 'pags/subpage/itemList.html'
     })

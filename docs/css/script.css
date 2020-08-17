@@ -7,6 +7,7 @@ body{
 	height: 100% !important;
 }
 
+h2,h1{color: #031246 !important;}
 h4{margin-bottom: 3px !important;}
 h5{font-size: 15px !important; text-transform: uppercase; margin: 5px !important;}
 
@@ -51,7 +52,18 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 	padding: 0px;
 	margin-bottom: 0px;
 	cursor: pointer;
+	border-bottom: 3px solid transparent ;
 	color: white;
+} .menu-item:hover{border-bottom: 3px solid #7e93da;}
+
+.modelo-button{
+	opacity: 0.5;
+} .modelo-button:hover{
+	opacity: 1;
+}
+
+.modelo-button-selected{
+	opacity: 1;
 }
 
 .menu-lateral-item{
@@ -81,7 +93,9 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 
 .store-detail,
 .store{
-	height: 500px;
+	height: auto;
+	padding-bottom: 10px;
+	border-radius: 7px;
 }
 
 .store-name{height: 20px; text-overflow: ellipsis; overflow: hidden;white-space: nowrap;display: block;cursor: pointer;}	
@@ -146,6 +160,7 @@ dir-pagination-controls	li:first-child{border-top-left-radius: .25rem;border-bot
 
 /****** MOBILE ******/
 @media only screen and (max-width: 450px) {
+	.menu-store{width: 100%;height: auto;position: relative;}
 	.logo{
 		left: 70px;
 	}

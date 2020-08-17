@@ -6,16 +6,23 @@
 /* Desenvolvido por Matheus Ferreira <maathe.f@gmail.com>
 /*
 /* ****************************************************** */
-moduleApp.controller('storeCtrl', function(storeFactory, $stateParams, $scope, cfpLoadingBar,  $state){  
-    
+moduleApp.controller('storeCtrl', function(storeFactory, $stateParams, $scope, cfpLoadingBar, $state){     
     $scope.loadItens = function(){
         cfpLoadingBar.start();
-        storeFactory.loadStoreList(returnData, $stateParams.listID);
-    
+        if($stateParams.listID === undefined & $stateParams.modeloID != null){
+            storeFactory.loadModelo(returnData, $stateParams.modeloID);
+        }
+        else
+            storeFactory.loadStoreList(returnData, $stateParams.listID);
+            
         function returnData(data){
             $scope.contents = data;
+            if($scope.contents.length === 0){
+                $state.go('contact');
+            }
             cfpLoadingBar.complete();
-        };
+        };      
     };
     $scope.loadItens();
+    
 });  
