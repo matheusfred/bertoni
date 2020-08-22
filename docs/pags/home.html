@@ -1,71 +1,77 @@
 <div class="row">
     <div class="container">
         <div class="col-md-12">
-            <div class="col-12" ng-class="{'d-none': $state.includes('home.modelo') || $state.includes('store') }">
+            <div class="col-12" ng-class="{'d-none': $state.includes('home.modelo') || $state.includes('store.modelo') || $state.includes('store.listPointer') }">
                 <img class="mx-auto d-block"  src="img/speedshop.png" alt="">
             </div>
             
-            <div class="col-12  blue">
+            <div class="col-12 mt-4 blue">
                 <div class="col-md-12 pt-2 pb-2">
                     <div class="text-center row" >
                         <div class="col-12">
                             <h4 class="mb-3">Peças mecânicas e acessórios para restauração</h4>
-                            <img class="col-md-2 col-sm-2 modelo-button"
+                            <img class="col-md-1 col-sm-2 modelo-button"
                                 src="img/models/mopar.png" 
                                 alt="Mopar" 
                                 ng-click="changeStatus('A');getCategory();"
                                 ui-sref="store.modelo({modeloID: 'A'})" ng-class="{'modelo-button-selected': statusModelo == 'A'}" fade-in>		
-                            <img class="col-md-2 col-sm-2 modelo-button"
+                            <img class="col-md-1 col-sm-2 modelo-button"
                                 src="img/models/chev.png"  
                                 alt="Chevrolet" 
                                 ng-click="changeStatus('B');getCategory();"
                                 ui-sref="store.modelo({modeloID: 'B'})" ng-class="{'modelo-button-selected': statusModelo == 'B'}" fade-in> 		
-                            <img class="col-md-2 col-sm-2 modelo-button"  
+                            <img class="col-md-1 col-sm-2 modelo-button"  
                                 src="img/models/ford.png"  
                                 alt="Ford"   
                                 ng-click="changeStatus('C')"   
                                 ui-sref="store.modelo({modeloID: 'C'})" ng-class="{'modelo-button-selected': statusModelo == 'C'}" fade-in>			
-                            <img class="col-md-2 col-sm-2 modelo-button"  
+                            <img class="col-md-1 col-sm-2 modelo-button"  
                                 src="img/models/hotrod.png"
                                 alt="Hot Rod" 
                                 ng-click="changeStatus('D')"  
                                 ui-sref="store.modelo({modeloID: 'D'})" ng-class="{'modelo-button-selected': statusModelo == 'D'}" fade-in>		
-                            <img class="col-md-2 col-sm-2 modelo-button"  
+                            <img class="col-md-1 col-sm-2 modelo-button"  
                                 src="img/models/volks.png" 
                                 alt="Volkswagen"
                                 ng-click="changeStatus('E')"
                                 ui-sref="store.modelo({modeloID: 'E'})" ng-class="{'modelo-button-selected': statusModelo == 'E'}" fade-in>			
                         </div>
-                        <!-- <ul class="col-12 mt-1 mb-1 nopadding">
-                            <li class="menu-item"  ng-click="changePointer('1')">ACABAMENTO </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('2')">ARREFECIMENTO </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('3')">BORRACHAS/VEDAÇÃO </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('4')">CABOS/FREIO/ACELERADOR </li>						
-                            <li class="menu-item ml-3" ng-click="changePointer('5')">CAMBIO/EMBREAGEM </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('6')">DIFERENCIAL </li>								
-                        </ul>    
-                        <ul class="col-12 mt-1 mb-1 nopadding">
-                            <li class="menu-item ml-3" ng-click="changePointer('7')">CORREIAS </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('8')">ELÉTRICA </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('9')">EMBLEMAS </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('10')">FREIO </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('11')">FRISOS </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('12')">JUNTAS </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('13')">LATARIA </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('14')">MOTOR </li>
-                            <li class="menu-item ml-3" ng-click="changePointer('15')">RETENTORES </li>
-                            <li class="menu-item ml-1" ng-click="changePointer('16')">ROLAMENTO </li>
-                            <li class="menu-item ml-2" ng-click="changePointer('17')">SUSPENSÃO/DIREÇÃO </li>
-                        </ul> -->
+                        <div ng-class="{'d-none': $state.includes('home') || $state.includes('store.list')}">
+                            <ul class="col-12 mt-1 mb-1 nopadding">
+                                <li class="menu-item"     ui-sref="store.listPointer({modeloID: statusModelo,listID: '1'})">ACABAMENTO </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '2'})">ARREFECIMENTO </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '3'})">BORRACHAS/VEDAÇÃO </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '4'})">CABOS/FREIO/ACELERADOR </li>						
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '5'})">CAMBIO/EMBREAGEM </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '6'})">DIFERENCIAL </li>								
+                            </ul>    
+                            <ul class="col-12 mt-1 mb-1 nopadding">
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '7' })">CORREIAS </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '8' })">ELÉTRICA </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '9' })">EMBLEMAS </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '10'})">FREIO </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '11'})">FRISOS </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '12'})">JUNTAS </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '13'})">LATARIA </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '14'})">MOTOR </li>
+                                <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '15'})">RETENTORES </li>
+                                <li class="menu-item ml-1"ui-sref="store.listPointer({modeloID: statusModelo,listID: '16'})">ROLAMENTO </li>
+                                <li class="menu-item ml-2"ui-sref="store.listPointer({modeloID: statusModelo,listID: '17'})">SUSPENSÃO/DIREÇÃO </li>
+                            </ul>
+                        </div>
                     </div>											
                 </div>
             </div>
 
-            <div class="transition col-md-12 mt-2 nopadding" ui-view></div>
-            
-            <div class="col-12 home-page" ng-class="{'d-none': $state.includes('home.modelo') || $state.includes('store')}">
+            <div class="col-12 blue mt-2 text-center" ng-class="{'d-none': $state.includes('home.modelo') || $state.includes('store')}"  fade-in>
+                <h4>Promoções</h4>
 
+                <div class="col-12 p-2" >
+                    <img ng-repeat="item in promo" class="col-3 img-list animate-show" ng-src="{{item.image}}">
+                </div>
             </div>
+
+            <div class="transition col-md-12 mt-2 nopadding" ui-view></div>
         </div>
     </div>
 </div>	

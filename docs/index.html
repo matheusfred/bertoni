@@ -50,15 +50,15 @@
 		<div class="col-lg-12 col-sm-8 nopadding">
 			<nav class="navbar container-fluid">
 				<ul class="col-12 mt-1 mb-1" ng-class="{'collapse mt-0': isMobile}" id="toggle-BtnMobile">
-					<li class="col-lg-2 col-md-12 offset-lg-8 text-center menu-item" ui-sref="home"  ng-click="changeStatus('')"  ng-class="{'selected': $state.includes('home')}">
+					<li class="col-lg-2 col-md-12 offset-lg-8 text-center menu-item" ui-sref="home"  ng-click="changeStatus('')"  ng-class="{selected: $state.includes('home')}">
 						<h5>HOME</h5>
 					</li>	
-					<li class="col-lg-2 col-md-12 text-center menu-item" ui-sref="contact" ng-class="{'selected': $state.includes('contact')}">
+					<li class="col-lg-2 col-md-12 text-center menu-item" ui-sref="contact" ng-class="{selected: $state.includes('contact')}">
 						<h5>Contact</h5>
 					</li>																						
 					<!-- <li class="col-lg-2 col-md-12 text-center menu-item" ui-sref="custom" ng-class="{selected: $state.includes('custom')}">
 						<h5>Custom Project</h5>
-					</li>																																									 -->
+					</li>-->
 				</ul>
 	
 				<div class="col-sm-12 btn-mobile navbar-dark">
@@ -93,15 +93,15 @@
 		<script type="text/javascript" src="js/app.js"></script>
 		<script type="text/javascript" src="js/routes.js"></script>
 		
-		<script type="text/javascript" src="js/controller/editCtrl.js"></script>
-		<script type="text/javascript" src="js/controller/configCtrl.js"></script>
-		<script type="text/javascript" src="js/controller/adminCtrl.js"></script>
 		<script type="text/javascript" src="js/controller/indexCtrl.js"></script> 
 		<script type="text/javascript" src="js/controller/storeCtrl.js"></script>
 		<script type="text/javascript" src="js/controller/contactCtrl.js"></script>
-		<script type="text/javascript" src="js/controller/dashboardCtrl.js"></script>
 		<script type="text/javascript" src="js/controller/itemDetailCtrl.js"></script>
-
+		<script type="text/javascript" src="js/controller/dashboardCtrls/editCtrl.js"></script>
+		<script type="text/javascript" src="js/controller/dashboardCtrls/adminCtrl.js"></script>
+		<script type="text/javascript" src="js/controller/dashboardCtrls/configCtrl.js"></script>
+		<script type="text/javascript" src="js/controller/dashboardCtrls/dashboardCtrl.js"></script>
+		
 		<!-- ANGULAR CONTROLLERS -->
 		<script type="text/javascript" src="js/factory/editFactory.js"></script>
 		<script type="text/javascript" src="js/factory/storeFactory.js"></script>
@@ -116,7 +116,7 @@
 		</div>
 		
 		<div class="col-md-12 msg_content_item" id="error_msg">
-			Items não encotrados no momento entre em contato para projetos customizados ou estimativa de estoque! 
+			Items não encotrados entre em contato para projetos customizados! 
 		</div>			
 	</body>
 </html>

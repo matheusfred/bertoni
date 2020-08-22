@@ -27,7 +27,7 @@
         <label for="staticDisponibilidade" class="sr-only">Disponibilidade</label>
         <input type="text" class="form-control mb-3" id="status" placeholder="Disponibilidade" ng-model="value.status">
 
-        <select for="staticModel" class="form-control mb-3" name="model" ng-model="value.modelo">
+        <select for="staticModel" class="form-control mb-3 custom-select" name="model" ng-model="value.modelo" required>
             <option value="OFF">OFF</option>
             <option value="A">MOPAR</option>
             <option value="B">FORD</option>
@@ -36,7 +36,7 @@
             <option value="E">HOT ROD</option>
         </select>
 
-        <select for="staticCategory" class="form-control mb-3" name="category" ng-model="value.category">
+        <select for="staticCategory" class="form-control mb-3 custom-select" name="category" ng-model="value.category" required>
             <option value="1">ACABAMENTO</option>
             <option value="2">ARREFECIMENTO</option>
             <option value="3">BORRACHAS/VEDAÇÃO</option>
@@ -73,6 +73,26 @@
 
         <label for="staticImage" class="sr-only">Imagem</label>
         <input type="text" class="form-control mb-3" id="image" placeholder="Url da imagem" ng-model="value.image">
+
+        <fieldset class="form-group blue-txt">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Promoção</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="true" ng-model="value.promo">
+                        <label class="form-check-label" for="gridRadios1">
+                            SIM
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="false" ng-model="value.promo" checked>
+                        <label class="form-check-label" for="gridRadios2">
+                            NÃO
+                        </label>
+                    </div>
+                </div>
+            </div>
+          </fieldset>
 
         <button class="btn btn-primary btn-lg" type="submit" ng-class="{'d-none': $state.includes('dashboard.edit')}" ng-click="createItems(value);">Registrar</button>
         <button class="btn btn-primary btn-lg" type="submit" ng-class="{'d-none': $state.includes('dashboard.new')}" ng-click="updateItems(value);">Alterar</button> 

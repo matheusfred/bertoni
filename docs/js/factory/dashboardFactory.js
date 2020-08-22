@@ -19,7 +19,8 @@ moduleApp.factory('dashboardFactory', function() {
                 fabricante: value.fabricante,
                 status: value.status,
                 category: value.category,
-                image: value.image
+                image: value.image,
+                promo: value.promo
             })
             return onSucess();
         },  
@@ -42,6 +43,17 @@ moduleApp.factory('dashboardFactory', function() {
 
             return callData(data);
             });     
-        }
+        },
+  
+        loadPromo: function(callData){
+            firestore.collection("itens").where("promo", "==", "true").get().then(function(querySnapshot) {
+                var data = querySnapshot.docs.map(function (documentSnapshot) {
+                return documentSnapshot.data();
+            });
+
+            return callData(data);
+            });     
+        }       
+
     }
 });    

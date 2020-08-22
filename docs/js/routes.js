@@ -35,9 +35,10 @@ moduleApp.config(function($stateProvider) {
       controller: 'storeCtrl',
       templateUrl: 'pags/subpage/itemList.html'
     })
-    .state('store.modelo.list', {
-      url: '/:listID',
-      controller: 'storeCtrl'
+    .state('store.listPointer', {
+      url: '/:modeloID/:listID',
+      controller: 'storeCtrl',
+      templateUrl: 'pags/subpage/itemList.html'
     })        
     .state('store.list', {
       url : '/:listID',
@@ -93,6 +94,6 @@ moduleApp.config(function($stateProvider) {
     .state('dashboard.config', {
       url: '/config',
       templateUrl: 'pags/subpage/dashboard/config.html',
-      controller: 'dashboardCtrl'
+      controller: 'configCtrl'
     })                           
 });

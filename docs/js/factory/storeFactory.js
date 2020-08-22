@@ -31,16 +31,6 @@ moduleApp.factory('storeFactory', function() {
 
             return returnData(data);
             });     
-        },
-        getCategory: function(callData){
-            firestore.collection("menu").orderBy("id", "asc").get().then(function(querySnapshot) {
-                var data = querySnapshot.docs.map(function (documentSnapshot) {
-                return documentSnapshot.data();
-            });
-
-            return callData(data);
-            });     
-        }        
-        
+        }      
     }
 });    

@@ -23,7 +23,8 @@ moduleApp.factory('editFactory', function() {
                         fabricante: value.fabricante,
                         status: value.status,
                         category: value.category,
-                        image: value.image
+                        image: value.image,
+                        promo: value.promo 
                     });
                 });
                 return onSucess();

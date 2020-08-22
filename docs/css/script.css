@@ -12,7 +12,7 @@ h4{margin-bottom: 3px !important;}
 h5{font-size: 15px !important; text-transform: uppercase; margin: 5px !important;}
 
 a{color: #7e93da;}
-a:hover{text-decoration: none !important;color: #7e93da !important;}
+a:hover{text-decoration: none !important;color: #031246 !important;}
 a:visited{color: honeydew;}
 
 p{margin: 5px !important;}
@@ -23,6 +23,7 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 .btn-mobile{visibility: hidden;display: none;}
 .hidden-content{display: none;visibility: hidden;}
 
+.blue-txt{color: #031246 !important;}
 .navbar,.store,.menu-store,.store-detail,.home-page,.blue{background-color: #536292;}
 
 .msg_content{
@@ -56,12 +57,12 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 
 .error_msg{
 	display: initial !important;
-	background-color: rgba(253, 125, 125, 0.8);
+	background-color: rgba(253, 125, 125, 0.5);
 }
 
 /* MENU CONFIG CSS */
 
-.selected{ border-bottom: 3px solid #7e93da;}
+.selected{ border-bottom: 3px solid #7e93da !important;}
 .selection{ background-color: #7e93da;}
 
 .menu-item{
@@ -75,6 +76,7 @@ ul{list-style: none;padding: 0px;margin-bottom: 3px !important;}
 
 .modelo-button{
 	opacity: 0.5;
+	cursor: pointer;
 } .modelo-button:hover{
 	opacity: 1;
 }
