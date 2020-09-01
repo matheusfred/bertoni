@@ -10,11 +10,15 @@
         </div>
 
         <div class="col-lg-8 mt-3">
+            <h5 ng-hide="calledItem.valor == 'N.A.'">{{calledItem.fabricante}}</h5>
+            <h5 ng-hide="calledItem.valor == 'N.A.'">{{calledItem.po}}</h5>
             <h5 ng-hide="calledItem.valor == 'N.A.'">R$: {{calledItem.valor}}</h5>
             <h5 ng-hide="calledItem.value == 'N.A.'">USA$: {{calledItem.value}}</h5>
 
             <h5 class="mt-2" ng-hide="calledItem.desc == 'N.A.'">{{calledItem.desc}}</h5>
             <h5 class="mt-2" ng-hide="calledItem.descen == 'N.A.'">{{calledItem.descen}}</h5>
+
+            <h5 class="mt-3" ng-hide="calledItem.descen == 'N.A.'">{{calledItem.status}}</h5>
 
         </div>
 

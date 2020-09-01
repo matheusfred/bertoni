@@ -15,28 +15,32 @@
                                 alt="Mopar" 
                                 ng-click="changeStatus('A');getCategory();"
                                 ui-sref="store.modelo({modeloID: 'A'})" ng-class="{'modelo-button-selected': statusModelo == 'A'}" fade-in>		
+                            
                             <img class="col-md-1 col-sm-2 modelo-button"
                                 src="img/models/chev.png"  
                                 alt="Chevrolet" 
-                                ng-click="changeStatus('B');getCategory();"
-                                ui-sref="store.modelo({modeloID: 'B'})" ng-class="{'modelo-button-selected': statusModelo == 'B'}" fade-in> 		
+                                ng-click="changeStatus('D');getCategory();"
+                                ui-sref="store.modelo({modeloID: 'D'})" ng-class="{'modelo-button-selected': statusModelo == 'B'}" fade-in> 		
+                            
                             <img class="col-md-1 col-sm-2 modelo-button"  
                                 src="img/models/ford.png"  
                                 alt="Ford"   
-                                ng-click="changeStatus('C')"   
-                                ui-sref="store.modelo({modeloID: 'C'})" ng-class="{'modelo-button-selected': statusModelo == 'C'}" fade-in>			
+                                ng-click="changeStatus('B')"   
+                                ui-sref="store.modelo({modeloID: 'B'})" ng-class="{'modelo-button-selected': statusModelo == 'C'}" fade-in>			
+                            
                             <img class="col-md-1 col-sm-2 modelo-button"  
                                 src="img/models/hotrod.png"
                                 alt="Hot Rod" 
-                                ng-click="changeStatus('D')"  
-                                ui-sref="store.modelo({modeloID: 'D'})" ng-class="{'modelo-button-selected': statusModelo == 'D'}" fade-in>		
+                                ng-click="changeStatus('E')"  
+                                ui-sref="store.modelo({modeloID: 'E'})" ng-class="{'modelo-button-selected': statusModelo == 'D'}" fade-in>		
+                            
                             <img class="col-md-1 col-sm-2 modelo-button"  
                                 src="img/models/volks.png" 
                                 alt="Volkswagen"
-                                ng-click="changeStatus('E')"
-                                ui-sref="store.modelo({modeloID: 'E'})" ng-class="{'modelo-button-selected': statusModelo == 'E'}" fade-in>			
+                                ng-click="changeStatus('C')"
+                                ui-sref="store.modelo({modeloID: 'C'})" ng-class="{'modelo-button-selected': statusModelo == 'E'}" fade-in>			
                         </div>
-                        <div ng-class="{'d-none': $state.includes('home') || $state.includes('store.list')}">
+                        <div ng-class="{'d-none': $state.includes('home') || $state.includes('store.list') || $state.includes('store.item')}">
                             <ul class="col-12 mt-1 mb-1 nopadding">
                                 <li class="menu-item"     ui-sref="store.listPointer({modeloID: statusModelo,listID: '1'})">ACABAMENTO </li>
                                 <li class="menu-item ml-3"ui-sref="store.listPointer({modeloID: statusModelo,listID: '2'})">ARREFECIMENTO </li>
@@ -67,9 +71,21 @@
                 <h4>Promoções</h4>
 
                 <div class="col-12 p-2" >
-                    <img ng-repeat="item in promo" class="col-3 img-list animate-show" ng-src="{{item.image}}">
+                    <img ng-repeat="item in promo" class="col-3 img-list animate-show modelo-button" ng-src="{{item.image}}" ui-sref="store.item({itemID: $index, item})">
                 </div>
             </div>
+
+            <!-- <div class="col-12">
+                <div class="row">
+                    <div class="col-md-6 blue mt-2"  ng-class="{'d-none': $state.includes('home.modelo') || $state.includes('store')}">
+
+                    </div>
+
+                    <div class="col-md-6 blue mt-2"  ng-class="{'d-none': $state.includes('home.modelo') || $state.includes('store')}">
+
+                    </div>            
+                </div>
+            </div> -->
 
             <div class="transition col-md-12 mt-2 nopadding" ui-view></div>
         </div>
